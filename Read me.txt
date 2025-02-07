@@ -1,0 +1,20 @@
+Snake Game 🐍
+
+	As a team, we decided to create our first game—Snake Game 🐍. It took us about 4 days to develop it, and we gave our best effort. We faced many challenges, but we overcame them, and we hope you enjoy the game 😊.
+
+How to Play:
+
+Playing is very simple ^_^
+
+- Press the Start button to begin the game and try to achieve the highest score 😉.
+- Choose the difficulty level: [Easy - Normal - Hard].
+- Challenge your friends in Hard mode 😈 to see who is the best 🤩.
+- Use the controls:
+  - W : Move Up
+  - S : Move Down
+  - D : Move Right
+  - A : Move Left
+- Press the Pause button if you need a break 😴.
+- Try to eat as many fruits as possible 🍒.
+
+That's it, and we hope you enjoy the game ❤. Have fun 😊.

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NameLabel</class>
+ <widget class="QDialog" name="NameLabel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Forte</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(55, 55, 55);</string>
+  </property>
+  <widget class="QWidget" name="GameScreen" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>750</width>
+     <height>750</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="EndButton">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>340</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 33, 85);</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PauseButton">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>270</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>21</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(92, 233, 255);</string>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="CurrentScore">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>510</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="CurrentScoreLabel">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>420</y>
+     <width>121</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(52, 255, 238);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;SCORE 👻&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="HighScoreLabel">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>580</y>
+     <width>121</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(19, 153, 255);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;High Score🪬&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="HighScore">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>680</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>12</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Sunken</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>10</y>
+     <width>881</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>34</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; color:#4fe223;&quot;&gt;SNAKE GAME 🐍&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="StartButton">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>200</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>23</pointsize>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">Color: rgb(130, 255, 46);</string>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>740</y>
+     <width>121</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>38</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; color:#4fe223;&quot;&gt;🐍&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>130</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Forte</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">Color: rgb(181, 33, 255);</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>   Easy</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Meduim</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>  Hard</string>
+    </property>
+   </item>
+  </widget>
+  <zorder>CurrentScore</zorder>
+  <zorder>GameScreen</zorder>
+  <zorder>EndButton</zorder>
+  <zorder>PauseButton</zorder>
+  <zorder>CurrentScoreLabel</zorder>
+  <zorder>HighScoreLabel</zorder>
+  <zorder>HighScore</zorder>
+  <zorder>label</zorder>
+  <zorder>StartButton</zorder>
+  <zorder>label_2</zorder>
+  <zorder>comboBox</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

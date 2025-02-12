@@ -86,7 +86,7 @@ class GameScreenWidget(QtWidgets.QWidget):
         elif self.direction == Qt.Key_Right:
             head_x += 1
         new_head = [head_y, head_x]
-        if (head_y < 0 or head_y >= 30 or head_x < 0 or head_x >= 30
+        if (head_y < 0 or head_y > 29 or head_x < 0 or head_x > 29
                 or new_head in self.snake):
             self.game_over = True
             self.update()

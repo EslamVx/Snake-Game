@@ -2,8 +2,8 @@
 import random
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QTimer, QRectF
+from PyQt5.QtGui import QColor
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QMediaPlaylist
-
 from database import load_high_score, save_high_score, initialize_database
 from ui import Ui_NameLabel
 from config import (
@@ -16,6 +16,7 @@ from config import (
 
 
 class GameScreenWidget(QtWidgets.QWidget):
+
     def __init__(self, parent=None, ui=None):
         super().__init__(parent)
         self.ui = ui
@@ -86,13 +87,8 @@ class GameScreenWidget(QtWidgets.QWidget):
         elif self.direction == Qt.Key_Right:
             head_x += 1
         new_head = [head_y, head_x]
-        if (
-            head_y < 0
-            or head_y >= 30
-            or head_x < 0
-            or head_x >= 30
-            or new_head in self.snake
-        ):
+        if (head_y < 0 or head_y >= 30 or head_x < 0 or head_x >= 30
+                or new_head in self.snake):
             self.game_over = True
             self.update()
             return
@@ -124,14 +120,15 @@ class GameScreenWidget(QtWidgets.QWidget):
         painter.fillRect(self.rect(), Qt.black)
         cell_w = self.width() // 30
         cell_h = self.height() // 30
-        painter.setBrush(Qt.green)
+        painter.setBrush(QColor("orchid"))
         for seg in self.snake:
             y, x = seg
-            painter.drawRect(QtCore.QRectF(x * cell_w, y * cell_h, cell_w, cell_h))
+            painter.drawRect(
+                QtCore.QRectF(x * cell_w, y * cell_h, cell_w, cell_h))
         food_y, food_x = self.food
-        scaled_image = self.food_image.scaled(
-            cell_w, cell_h, Qt.KeepAspectRatio, Qt.SmoothTransformation
-        )
+        scaled_image = self.food_image.scaled(cell_w, cell_h,
+                                              Qt.KeepAspectRatio,
+                                              Qt.SmoothTransformation)
         painter.drawPixmap(food_x * cell_w, food_y * cell_h, scaled_image)
 
         if self.game_over:
@@ -142,6 +139,7 @@ class GameScreenWidget(QtWidgets.QWidget):
 
 
 class SnakeGameDialog(QtWidgets.QDialog):
+
     def __init__(self):
         super().__init__()
         initialize_database()
@@ -160,14 +158,14 @@ class SnakeGameDialog(QtWidgets.QDialog):
         self.update_difficulty()
 
         self.playlist = QMediaPlaylist()
-        self.playlist.addMedia(QMediaContent(QtCore.QUrl.fromLocalFile(START_SOUND)))
+        self.playlist.addMedia(
+            QMediaContent(QtCore.QUrl.fromLocalFile(START_SOUND)))
         self.playlist.setPlaybackMode(QMediaPlaylist.Loop)
         self.media_player = QMediaPlayer()
         self.media_player.setPlaylist(self.playlist)
         self.game_over_player = QMediaPlayer()
         self.game_over_player.setMedia(
-            QMediaContent(QtCore.QUrl.fromLocalFile(GAMEOVER_SOUND))
-        )
+            QMediaContent(QtCore.QUrl.fromLocalFile(GAMEOVER_SOUND)))
 
     def update_difficulty(self):
         difficulty = self.ui.comboBox.currentText().strip()

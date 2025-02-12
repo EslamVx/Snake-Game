@@ -19,7 +19,7 @@ class GameScreenWidget(QtWidgets.QWidget):
     def __init__(self, parent=None, ui=None):
         super().__init__(parent)
         self.ui = ui
-        self.setFocusPolicy(Qt.StrongFocus)
+        # self.setFocusPolicy(Qt.StrongFocus)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.game_loop)
         self.fruit_images = [

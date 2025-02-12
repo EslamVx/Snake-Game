@@ -20,7 +20,6 @@ class GameScreenWidget(QtWidgets.QWidget):
     def __init__(self, parent=None, ui=None):
         super().__init__(parent)
         self.ui = ui
-        # self.setFocusPolicy(Qt.StrongFocus)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.game_loop)
         self.fruit_images = [
@@ -120,7 +119,13 @@ class GameScreenWidget(QtWidgets.QWidget):
         painter.fillRect(self.rect(), Qt.black)
         cell_w = self.width() // 30
         cell_h = self.height() // 30
-        painter.setBrush(QColor("orchid"))
+        snake_color = "orchid"
+        if self.ui is not None and hasattr(self.ui, "comboBox2"):
+            selected_color = self.ui.comboBox2.currentText().strip()
+            if selected_color:
+                snake_color = selected_color
+        painter.setBrush(QColor(snake_color))
+
         for seg in self.snake:
             y, x = seg
             painter.drawRect(
@@ -132,7 +137,6 @@ class GameScreenWidget(QtWidgets.QWidget):
         painter.drawPixmap(food_x * cell_w, food_y * cell_h, scaled_image)
 
         if self.game_over:
-
             painter.setPen(Qt.white)
             painter.setFont(QtGui.QFont("Forte", 24))
             painter.drawText(self.rect(), Qt.AlignCenter, "Game Over!")
@@ -156,7 +160,7 @@ class SnakeGameDialog(QtWidgets.QDialog):
         self.ui.EndButton.clicked.connect(self.close)
         self.ui.comboBox.currentIndexChanged.connect(self.update_difficulty)
         self.update_difficulty()
-
+        self.ui.comboBox2.currentIndexChanged.connect(self.game_widget.update)
         self.playlist = QMediaPlaylist()
         self.playlist.addMedia(
             QMediaContent(QtCore.QUrl.fromLocalFile(START_SOUND)))

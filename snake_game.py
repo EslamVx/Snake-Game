@@ -21,6 +21,7 @@ class GameScreenWidget(QtWidgets.QWidget):
         super().__init__(parent)
         self.ui = ui
         self.timer = QTimer(self)
+        self.setFocusPolicy(Qt.StrongFocus)
         self.timer.timeout.connect(self.game_loop)
         self.fruit_images = [
             QtGui.QPixmap("icon/apple.png"),

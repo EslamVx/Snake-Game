@@ -181,7 +181,7 @@ class SnakeGameDialog(QtWidgets.QDialog):
         elif difficulty == "Hard":
             self.game_widget.timer_interval = HARD_INTERVAL
         else:
-            self.game_widget.timer_interval = EASY_INTERVAL
+            self.game_widget.timer_interval = MEDIUM_INTERVAL
 
     def start_game(self):
         self.update_difficulty()

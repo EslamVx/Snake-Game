@@ -197,6 +197,7 @@ class SnakeGameDialog(QtWidgets.QDialog):
             self.ui.PauseButton.setText("Resume")
         else:
             self.game_widget.pause_game()
+            self.game_widget.setFocus()
             self.media_player.play()
             self.ui.PauseButton.setText("Stop")
 

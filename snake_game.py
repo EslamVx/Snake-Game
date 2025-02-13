@@ -176,8 +176,6 @@ class SnakeGameDialog(QtWidgets.QDialog):
         difficulty = self.ui.comboBox.currentText().strip()
         if difficulty == "Easy":
             self.game_widget.timer_interval = EASY_INTERVAL
-        elif difficulty == "Medium":
-            self.game_widget.timer_interval = MEDIUM_INTERVAL
         elif difficulty == "Hard":
             self.game_widget.timer_interval = HARD_INTERVAL
         else:
